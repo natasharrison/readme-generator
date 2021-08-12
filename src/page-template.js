@@ -3,36 +3,36 @@ module.exports = responses => {
 
     return `
         
-        # ${questions.title}
+        # ${responses.title}
         -----------------------
 
         ## Description 
-        ${questions.description}
-        ${questions.screenshot}
-        Created by ${questions.github}
-        Repository: ${questions.repo}
+        ${responses.description}
+        ${responses.screenshot}
+        Created by ${responses.github}
+        Repository: ${responses.repo}
 
         ## Table of Contents 
-        ${questions.tableOfContents}
+        ${responses.tableOfContents}
         * [Installation](#installation)
         * [Usage](#usage)
         * [Credits](#credits)
         * [License](#license)
         
         ## Installation 
-        ${questions.install}
+        ${responses.install}
 
         ## Usage 
-        ${questions.usage}
+        ${responses.usage}
 
         ## Credits 
-        ${questions.collab}
-        ${questions.assets}
+        ${responses.collab}
+        ${responses.assets}
 
         ## License 
 
         ## Questions 
-        Any questions? Please contact me at ${questions.email}
+        Any questions? Please contact me at ${responses.email}
         
         `;
 };

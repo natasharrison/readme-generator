@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const readMe = require('./src/page-template.js');
-const writeFile = require('./utils/generateMarkdown');
+const { writeFile } = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -74,15 +74,13 @@ const questions = [
     }
 ];
 
-
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions)
         .then((
             responses
         ) => {
-            const data = readMe(responses);
-
+            const data = readMe(responses)
             writeFile("README.md", data)
         })
 }
