@@ -11,7 +11,7 @@ An application that allows a user to create a README.md file from their terminal
  ## Usage
  - The user will be asked a series of questions within the terminal once the command 'node index.js' is invoked.
  - ![screenshot](./src/screenshot.JPG)
- - ![Screencastify] 
+ - ![Screencastify] <iframe src="https://drive.google.com/file/d/1HLksXVLyCJVt2btv8ZTf8dfHU-1pV5Bv/preview" width="640" height="480"></iframe>
 
 
 
