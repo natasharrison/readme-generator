@@ -13,9 +13,9 @@ const questions = [
     {
         type: 'input',
         name: 'description',
-        message: 'Please provide a description of your application',
+        message: 'Please provide a description of your application:',
     },
-        {
+    {
         type: 'input',
         name: 'repo',
         message: 'Enter the Github link to your project: '
@@ -66,7 +66,7 @@ const questions = [
     {
         type: 'input', 
         name: 'license', 
-        message: 'Please list the license for this application;'      
+        message: 'Please list the license for this application:'      
     }
 ];
 
@@ -81,7 +81,7 @@ function writeToFile(fileName, data) {
         }
 
         // if everything went well, resolve the Promise and send the successful data to the `.then()` method
-        resolve({
+        return({
             ok: true,
             message: 'File created!'
         });
