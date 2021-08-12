@@ -19,17 +19,17 @@ const questions = [
         type: 'input',
         name: 'repo',
         message: 'Enter the Github link to your project: '
-    }, 
-        {
+    },
+    {
         type: 'input',
         name: 'github',
         message: 'Enter your GitHub username: '
-    }, 
+    },
     {
-        type: 'input', 
-        name: 'screenshot', 
+        type: 'input',
+        name: 'screenshot',
         message: 'Insert a link to a screenshot of your application:'
-    }, 
+    },
     {
         type: 'confirm',
         name: 'confirmContents',
@@ -53,23 +53,23 @@ const questions = [
         message: 'Please provide instructions and examples for use:'
     },
     {
-        type: 'input', 
-        name: 'collab', 
-        message: 'If you had any collaborators, please include links to their GitHub profiles: ', 
-    }, 
+        type: 'input',
+        name: 'collab',
+        message: 'If you had any collaborators, please include links to their GitHub profiles: ',
+    },
     {
-        type: 'input', 
+        type: 'input',
         name: 'creditsAssets',
         message: 'If you used any third-party assets, please include links to those resources and the name of the creator(s):'
     },
     {
-        type: 'input', 
-        name: 'license', 
-        message: 'Please list the license for this application:'      
-    }, 
+        type: 'input',
+        name: 'license',
+        message: 'Please list the license for this application:'
+    },
     {
-        type: 'input', 
-        name: 'email', 
+        type: 'input',
+        name: 'email',
         message: 'What is your email address?'
     }
 ];
@@ -81,9 +81,9 @@ function init() {
             responses
         ) => {
             const data = readMe(responses)
-            writeFile("README.md", data)
+            writeFile(data)
         })
-}
+};
 
 // Function call to initialize app
 init();

@@ -2,7 +2,6 @@ module.exports = responses => {
     const { questions } = responses;
 
     return `
-        
         # ${responses.title}
         -----------------------
 
