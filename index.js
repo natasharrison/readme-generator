@@ -27,23 +27,6 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'screenshot',
-        message: 'Insert a link to a screenshot of your application:'
-    },
-    {
-        type: 'confirm',
-        name: 'confirmContents',
-        message: 'Would you like to create a Table of Contents? This is recommended when you have a long ReadMe.',
-        default: true
-    },
-    {
-        type: 'input',
-        name: 'tableOfContents',
-        message: 'Please enter your Table of Contents:',
-        when: ({ confirmContents }) => (confirmContents)
-    },
-    {
-        type: 'input',
         name: 'install',
         message: 'Please write the steps for installation of your application: '
     },
@@ -66,6 +49,11 @@ const questions = [
         type: 'input',
         name: 'license',
         message: 'Please list the license for this application:'
+    },
+    {
+        type: 'input', 
+        name: 'test', 
+        message: 'Please provide any instructions for how to run tests on your application: '
     },
     {
         type: 'input',
