@@ -1,13 +1,13 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
-const fs = require('fs');
-const readMe = require('./utils/generateMarkdown');
+const readMe = require('./src/page-template.js');
+const writeFile = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = [
     {
         type: 'input',
-        name: 'app',
+        name: 'title',
         message: 'What is the title of your application?',
     },
     {
@@ -19,6 +19,11 @@ const questions = [
         type: 'input',
         name: 'repo',
         message: 'Enter the Github link to your project: '
+    }, 
+        {
+        type: 'input',
+        name: 'github',
+        message: 'Enter your GitHub username: '
     }, 
     {
         type: 'input', 
@@ -39,7 +44,7 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'installation',
+        name: 'install',
         message: 'Please write the steps for installation of your application: '
     },
     {
@@ -48,14 +53,8 @@ const questions = [
         message: 'Please provide instructions and examples for use:'
     },
     {
-        type: 'checkbox',
-        name: 'languages',
-        message: 'What did you build this application with? (check all that apply)',
-        choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node', 'React', 'Other']
-    },
-    {
         type: 'input', 
-        name: 'creditsCollaborators', 
+        name: 'collab', 
         message: 'If you had any collaborators, please include links to their GitHub profiles: ', 
     }, 
     {
@@ -67,26 +66,14 @@ const questions = [
         type: 'input', 
         name: 'license', 
         message: 'Please list the license for this application:'      
+    }, 
+    {
+        type: 'input', 
+        name: 'email', 
+        message: 'What is your email address?'
     }
 ];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, (err) => {
-        // if there's an error, reject the Promise and sent the error to the Promise's `.catch()` method
-        if (err) {
-            reject(err);
-            // return out of the function here to make sure the Promise doesn't accidentally execute the resolve() function as well
-            return;
-        }
-
-        // if everything went well, resolve the Promise and send the successful data to the `.then()` method
-        return({
-            ok: true,
-            message: 'File created!'
-        });
-    })
-}
 
 // TODO: Create a function to initialize app
 function init() {
@@ -96,7 +83,7 @@ function init() {
         ) => {
             const data = readMe(responses);
 
-            writeToFile("README.md", data)
+            writeFile("README.md", data)
         })
 }
 
